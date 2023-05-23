@@ -4,7 +4,9 @@
     ./nix.nix
   ];
 
-  boot.cleanTmpDir = true;
+  system.stateVersion = 22.11;
+
+  boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
   networking.hostName = "vultr";
   networking.domain = "guest";

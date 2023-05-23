@@ -13,16 +13,13 @@
                         , nixpkgs
                         , flake-utils
                         , nixos-generators
-    }:
-    let
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
-    in 
-    {
+    }: rec {
       nixosConfigurations.vultr = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
         ];
       };
+      packages.x86_64-linux.default = nixosConfigurations.vultr.config.system.build.toplevel;
     };
 }
