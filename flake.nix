@@ -14,7 +14,7 @@
                         , flake-utils
                         , nixos-generators
     }: {
-      packages.default = nixpkgs.lib.nixosSystem {
+      packages.x86_64-linux.default = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
