@@ -18,7 +18,7 @@
       pkgs = import nixpkgs { system = "x86_64-linux"; };
     in 
     {
-      packages.x86_64-linux.default = pkgs.lib.nixosSystem {
+      nixosConfigurations.vultr = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
