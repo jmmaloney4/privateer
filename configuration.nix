@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
+    ./nix.nix
   ];
 
   boot.cleanTmpDir = true;
